@@ -211,13 +211,11 @@ const Header = ()  => {
                             <>
                             <NavLink to="/" >Home</NavLink>
                                 {
-                                    categories.map((category, i) => {
+                                    categories.map((category) => {
                                         return (
-                                            <li key={category.id}>
-                                                <NavLink to={`/${category.id}`}>
-                                                    {category.name}
-                                                </NavLink> 
-                                            </li>
+                                            <NavLink key={category.id} to={`/category/${category.id}`}>
+                                                {category.name}
+                                            </NavLink> 
                                         )
                                     })
                                 }

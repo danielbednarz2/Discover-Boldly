@@ -1,8 +1,8 @@
-import gql from 'graphql-tag'
+import { gql } from '@apollo/client'
 
 const CATEGORIES_QUERY = gql`
     query Categories {
-        category {
+        categories {
             id
             name
         }
