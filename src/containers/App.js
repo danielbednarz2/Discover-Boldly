@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Home from './Articles/Articles'
 import Article from './Article/Article'
 import Category from './Category/Category'
+import Footer from '../components/Footer/Footer'
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="/articles/:id" component={Article} />
                 <Route path="/category/:id" component={Category} exact />
             </Switch>
+            <Footer />
         </Wrapper>
     )
 }
