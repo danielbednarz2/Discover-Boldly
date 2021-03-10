@@ -84,7 +84,7 @@ const Card = ({ article }) => {
            { article.map(articles => {
             return (
             <StyledLink to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
-                <Thumbnail src={`http://localhost:1337${articles.image.url}`} />
+                <Thumbnail src={`${process.env.REACT_APP_BACKEND_URL}${articles.image.url}`} />
                 <BlogInfo>
                     <Title>{articles.title}</Title>
                     <BlogCategories>

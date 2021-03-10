@@ -32,7 +32,7 @@ const Article = () => {
                 return (
                     <Wrapper>
                         <ImgWrapper>
-                            <img src={`http://localhost:1337${articles[id-1].image.url}`} alt='Blog Post' style={{'width': '80%'}} />         
+                            <img src={`${process.env.REACT_APP_BACKEND_URL}${articles[id-1].image.url}`} alt='Blog Post' style={{'width': '80%'}} />         
                         </ImgWrapper>
                         <ContentWrapper>
                             <h1 style={{'padding': '1em 0'}}>{articles[id-1].title}</h1>
