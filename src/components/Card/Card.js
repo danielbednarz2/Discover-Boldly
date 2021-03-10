@@ -84,7 +84,7 @@ const Card = ({ article }) => {
            { article.map(articles => {
             return (
             <StyledLink to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
-                <Thumbnail src={`${process.env.REACT_APP_BACKEND_URL}${articles.image.url}`} />
+                <Thumbnail src={`https://warm-shore-09791.herokuapp.com${articles.image.url}`} />
                 <BlogInfo>
                     <Title>{articles.title}</Title>
                     <BlogCategories>

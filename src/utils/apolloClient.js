@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 const client = new ApolloClient({
-    uri: process.env.REACT_APP_BACKEND_URL,
+    uri: 'https://warm-shore-09791.herokuapp.com/graphql',
     cache: new InMemoryCache()
 })
 
