@@ -81,19 +81,22 @@ const Card = ({ article }) => {
     return (
         <Wrapper>
 
-           { article.map(articles => {
-            return (
-            <StyledLink to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
-                <Thumbnail src={`https://warm-shore-09791.herokuapp.com${articles.image.url}`} />
-                <BlogInfo>
-                    <Title>{articles.title}</Title>
-                    <BlogCategories>
-                        <Categories>{articles.category.name}</Categories>
-                        <ReadMore>Read More</ReadMore>
-                    </BlogCategories>
-                </BlogInfo>
-            </StyledLink>
-            )
+           { article.map((articles, i) => {
+            if(i < 6) {
+                return (
+                <StyledLink key={articles.id} to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
+                    <Thumbnail src={`https://warm-shore-09791.herokuapp.com${articles.image.url}`} />
+                    <BlogInfo>
+                        <Title>{articles.title}</Title>
+                        <BlogCategories>
+                            <Categories>{articles.category.name}</Categories>
+                            <ReadMore>Read More</ReadMore>
+                        </BlogCategories>
+                    </BlogInfo>
+                </StyledLink>
+                )
+            }
+            return true
            })
         }
         </Wrapper>
