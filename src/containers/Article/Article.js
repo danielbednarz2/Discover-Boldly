@@ -32,7 +32,7 @@ const Article = () => {
                 return (
                     <Wrapper>
                         <ImgWrapper>
-                            <img src={`https://warm-shore-09791.herokuapp.com${articles[id-1].image.url}`} alt='Blog Post' style={{'width': '80%'}} />         
+                            <img src={articles[id-1].image.url} alt='Blog Post' style={{'width': '80%'}} />         
                         </ImgWrapper>
                         <ContentWrapper>
                             <h1 style={{'padding': '1em 0'}}>{articles[id-1].title}</h1>
