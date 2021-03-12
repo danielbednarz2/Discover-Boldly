@@ -36,6 +36,7 @@ const StyledLink = styled(Link)`
 const Thumbnail = styled.img`
     object-fit: cover;
     height: 60%;
+    overflow: hidden;
 
     @media (max-width: 400px) {
         height: 100px;
@@ -80,9 +81,9 @@ const ReadMore = styled.span`
 const Card = ({ article }) => {    
     return (
         <Wrapper>
-
-           { article.map((articles, i) => {
-            if(i < 6) {
+           { 
+           article.map((articles, i) => {
+                if(i < 6) {
                 return (
                 <StyledLink key={articles.id} to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
                     <Thumbnail src={articles.image.url} />
