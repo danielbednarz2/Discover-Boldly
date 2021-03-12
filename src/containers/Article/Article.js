@@ -32,15 +32,15 @@ const Article = () => {
                 return (
                     <Wrapper>
                         <ImgWrapper>
-                            <img src={articles[id-1].image.url} alt='Blog Post' style={{'width': '80%'}} />         
+                            <img src={articles[id].image.url} alt='Blog Post' style={{'width': '80%'}} />         
                         </ImgWrapper>
                         <ContentWrapper>
-                            <h1 style={{'padding': '1em 0'}}>{articles[id-1].title}</h1>
+                            <h1 style={{'padding': '1em 0'}}>{articles[id].title}</h1>
                             <div>
-                                <ReactMarkdown source={articles[id-1].content} />
+                                <ReactMarkdown source={articles[id].content} />
                                 <p style={{'font-weight': 'bold', 'padding': '1em 0'}}>
                                     <Moment format="MMM Do, YYYY">
-                                        {articles[id-1].published_at}
+                                        {articles[id].published_at}
                                     </Moment>
                                 </p>
                             </div>
