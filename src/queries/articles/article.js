@@ -1,8 +1,8 @@
 import gql from '@apollo/client'
 
 const ARTICLE_QUERY = gql`
-    query Article($id: INT!) {
-        articles(id: $id) {
+    query Article($id: ID!) {
+        articles(id:$id) {
             id
             title
             content

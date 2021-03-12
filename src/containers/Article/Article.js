@@ -29,18 +29,20 @@ const Article = () => {
     return (
         <Query query={ARTICLE_QUERY} id={id}>
             {({data: { articles } }) => {
+                const article = articles.filter(i => i.id === id)
                 return (
                     <Wrapper>
+                        {console.log(article)}
                         <ImgWrapper>
-                            <img src={articles[id].image.url} alt='Blog Post' style={{'width': '80%'}} />         
+                            <img src={article[0].image.url} alt='Blog Post' style={{'width': '80%'}} />         
                         </ImgWrapper>
                         <ContentWrapper>
-                            <h1 style={{'padding': '1em 0'}}>{articles[id].title}</h1>
+                            <h1 style={{'padding': '1em 0'}}>{article[0].title}</h1>
                             <div>
-                                <ReactMarkdown source={articles[id].content} />
-                                <p style={{'font-weight': 'bold', 'padding': '1em 0'}}>
+                                <ReactMarkdown source={article[0].content} />
+                                <p style={{'fontWeight': 'bold', 'padding': '1em 0'}}>
                                     <Moment format="MMM Do, YYYY">
-                                        {articles[id].published_at}
+                                        {article[0].published_at}
                                     </Moment>
                                 </p>
                             </div>
