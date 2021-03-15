@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Wrapper = styled.div` 
@@ -79,27 +79,42 @@ const ReadMore = styled.span`
 
 
 const Card = ({ article }) => {    
+    const location = useLocation();
+    const reveresedArray = [...article].reverse();
     return (
-        <Wrapper>
-           { 
-           article.map((articles, i) => {
-                if(i < 6) {
-                return (
-                <StyledLink key={articles.id} to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
-                    <Thumbnail src={articles.image.url} />
-                    <BlogInfo>
-                        <Title>{articles.title}</Title>
-                        <BlogCategories>
-                            <Categories>{articles.category.name}</Categories>
-                            <ReadMore>Read More</ReadMore>
-                        </BlogCategories>
-                    </BlogInfo>
-                </StyledLink>
-                )
+        <Wrapper> 
+           {
+           reveresedArray.map((articles, i) => {
+                if(location.pathname !== "/") {
+                    return (
+                    <StyledLink key={articles.id} to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
+                        <Thumbnail src={articles.image.url} />
+                        <BlogInfo>
+                            <Title>{articles.title}</Title>
+                            <BlogCategories>
+                                <Categories>{articles.category.name}</Categories>
+                                <ReadMore>Read More</ReadMore>
+                            </BlogCategories>
+                        </BlogInfo>
+                    </StyledLink>
+                    ) 
+                } else if (i < 6) {
+                    return (
+                        <StyledLink key={articles.id} to={`/articles/${articles.id}`} style={{'textDecoration': 'none', 'color': '#32453E'}}>
+                            <Thumbnail src={articles.image.url} />
+                            <BlogInfo>
+                                <Title>{articles.title}</Title>
+                                <BlogCategories>
+                                    <Categories>{articles.category.name}</Categories>
+                                    <ReadMore>Read More</ReadMore>
+                                </BlogCategories>
+                            </BlogInfo>
+                        </StyledLink>
+                    )
+                }
+                return true
+            })
             }
-            return true
-           })
-        }
         </Wrapper>
 
     )

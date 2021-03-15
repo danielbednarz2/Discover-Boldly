@@ -39,11 +39,15 @@ const SiteLogo = styled.img`
 `
 
 const SiteName = styled.h1`
-    margin-left: 2rem;
     color: #32453E;
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: .25em;
+    margin-left: 3rem;
+
+    @media (max-width: 500px) {
+        margin-left: 0;
+    }
 
     @media (max-width: 768px) {
         font-size: 1rem;
@@ -143,6 +147,10 @@ const Head = styled.header`
     align-items: center;
     border-bottom: 1px solid;
 
+    @media (max-width: 500px) {
+        width: 90vw;
+    }
+
     @media (min-width: 992px) {
         width: 60vw;
     }
@@ -166,6 +174,11 @@ const NavLink = styled(Link)`
     &:hover {
         color: #699184;
     }
+
+    @media (max-width: 500px) {
+        font-size: .5rem;
+    }
+
 
     @media (max-width: 768px) {
         font-size: .6rem;
@@ -209,7 +222,7 @@ const Header = ()  => {
                     ({ data: {categories}}) => {
                         return (
                             <>
-                            <NavLink to="/" >Home</NavLink>
+                            <NavLink to="/">Home</NavLink>
                                 {
                                     categories.map((category) => {
                                         return (
