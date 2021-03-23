@@ -4,7 +4,7 @@ Welcome to my personal blog source code!
 
 If you're looking for my actual blog just go here -> https://discoverboldly.com
 
-![Project Screenshot](/src/assets/DiscoverBoldly.png)
+![Project Screenshot](/src/assets/discoverboldly.gif)
 
 This project was created with:
 * React
