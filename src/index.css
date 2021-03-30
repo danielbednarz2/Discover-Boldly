@@ -6,3 +6,9 @@
 html, body {
     margin: 0;
 }
+
+pre {
+    background-color: rgb(208, 208, 208);
+    padding: 1em;
+    line-height: 1.25em;
+}
