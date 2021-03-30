@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   color: #32453E;
   width: 100vw;
   overflow-x: hidden;
-  padding-top: 1em;
+  padding: 1em 0;
 `
 
 const App = () => {

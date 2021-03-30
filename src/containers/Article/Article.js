@@ -11,12 +11,16 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 80vw;
     line-height: 2em;
+
+    @media (min-width: 1400px) {
+        width: 60vw;
+    }
 `
 const ImgWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em 0;
+    padding-top: 2em;
 `
 
 const ContentWrapper = styled.div`
@@ -34,7 +38,7 @@ const Article = () => {
                     <Wrapper>
                         {console.log(article)}
                         <ImgWrapper>
-                            <img src={article[0].image.url} alt='Blog Post' style={{'width': '80%'}} />         
+                            <img src={article[0].image.url} alt='Blog Post' style={{'width': '60%'}} />         
                         </ImgWrapper>
                         <ContentWrapper>
                             <h1 style={{'padding': '1em 0'}}>{article[0].title}</h1>
